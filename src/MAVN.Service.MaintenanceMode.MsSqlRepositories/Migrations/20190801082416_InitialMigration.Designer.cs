@@ -22,7 +22,7 @@ namespace MAVN.Service.MaintenanceMode.MsSqlRepositories.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Lykke.Service.MaintenanceMode.MsSqlRepositories.Entitites.ActiveMaintenanceEntity", b =>
+            modelBuilder.Entity("MAVN.Service.MaintenanceMode.MsSqlRepositories.Entitites.ActiveMaintenanceEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,7 +43,7 @@ namespace MAVN.Service.MaintenanceMode.MsSqlRepositories.Migrations
                     b.ToTable("maintenance");
                 });
 
-            modelBuilder.Entity("Lykke.Service.MaintenanceMode.MsSqlRepositories.Entitites.MaintenanceEventEntity", b =>
+            modelBuilder.Entity("MAVN.Service.MaintenanceMode.MsSqlRepositories.Entitites.MaintenanceEventEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
