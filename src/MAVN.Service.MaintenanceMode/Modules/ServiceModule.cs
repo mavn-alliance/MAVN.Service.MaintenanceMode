@@ -1,6 +1,6 @@
 using Autofac;
 using JetBrains.Annotations;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.MaintenanceMode.Domain.Repositories;
 using MAVN.Service.MaintenanceMode.Domain.Services;
 using MAVN.Service.MaintenanceMode.DomainServices;

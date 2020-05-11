@@ -1,5 +1,5 @@
 using JetBrains.Annotations;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.MaintenanceMode.MsSqlRepositories.Entitites;
 using Microsoft.EntityFrameworkCore;
 
