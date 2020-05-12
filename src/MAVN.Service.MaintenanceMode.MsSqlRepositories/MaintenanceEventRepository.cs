@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.MaintenanceMode.Domain;
 using MAVN.Service.MaintenanceMode.Domain.Repositories;
 using MAVN.Service.MaintenanceMode.MsSqlRepositories.Entitites;
