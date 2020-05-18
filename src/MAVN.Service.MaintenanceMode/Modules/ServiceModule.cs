@@ -1,4 +1,4 @@
-using Autofac;
+﻿using Autofac;
 using JetBrains.Annotations;
 using MAVN.Common.MsSql;
 using MAVN.Service.MaintenanceMode.Domain.Repositories;
@@ -22,7 +22,11 @@ namespace MAVN.Service.MaintenanceMode.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterMsSql(() => new MaintenanceEventContext(_connectionString));
+            builder.RegisterMsSql(
+                _connectionString,
+                connectionString => new MaintenanceEventContext(connectionString),
+                dbConnection => new MaintenanceEventContext(dbConnection)
+                );
 
             builder.RegisterType<MaintenanceEventRepository>()
                 .As<IMaintenanceEventRepository>()

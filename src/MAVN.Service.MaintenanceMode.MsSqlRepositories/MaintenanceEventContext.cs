@@ -1,3 +1,4 @@
+﻿using System.Data.Common;
 using JetBrains.Annotations;
 using MAVN.Common.MsSql;
 using MAVN.Service.MaintenanceMode.MsSqlRepositories.Entitites;
@@ -20,6 +21,11 @@ namespace MAVN.Service.MaintenanceMode.MsSqlRepositories
         [UsedImplicitly]
         public MaintenanceEventContext(DbContextOptions contextOptions)
             : base(Schema, contextOptions)
+        {
+        }
+
+        public MaintenanceEventContext(DbConnection dbConnection)
+            : base(Schema)
         {
         }
 
