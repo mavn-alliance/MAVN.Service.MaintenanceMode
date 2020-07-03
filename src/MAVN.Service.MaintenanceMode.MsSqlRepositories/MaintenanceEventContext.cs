@@ -1,12 +1,12 @@
 ﻿using System.Data.Common;
 using JetBrains.Annotations;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.MaintenanceMode.MsSqlRepositories.Entitites;
 using Microsoft.EntityFrameworkCore;
 
 namespace MAVN.Service.MaintenanceMode.MsSqlRepositories
 {
-    public class MaintenanceEventContext : MsSqlContext
+    public class MaintenanceEventContext : PostgreSQLContext
     {
         private const string Schema = "maintenance";
 
@@ -40,11 +40,7 @@ namespace MAVN.Service.MaintenanceMode.MsSqlRepositories
         {
         }
 
-        protected override void OnLykkeConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-        }
-
-        protected override void OnLykkeModelCreating(ModelBuilder modelBuilder)
+        protected override void OnMAVNModelCreating(ModelBuilder modelBuilder)
         {
         }
     }

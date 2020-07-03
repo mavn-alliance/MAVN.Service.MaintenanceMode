@@ -1,12 +1,12 @@
 ﻿using Autofac;
 using JetBrains.Annotations;
-using MAVN.Common.MsSql;
 using MAVN.Service.MaintenanceMode.Domain.Repositories;
 using MAVN.Service.MaintenanceMode.Domain.Services;
 using MAVN.Service.MaintenanceMode.DomainServices;
 using MAVN.Service.MaintenanceMode.MsSqlRepositories;
 using MAVN.Service.MaintenanceMode.Settings;
 using Lykke.SettingsReader;
+using MAVN.Persistence.PostgreSQL.Legacy;
 
 namespace MAVN.Service.MaintenanceMode.Modules
 {
@@ -22,7 +22,7 @@ namespace MAVN.Service.MaintenanceMode.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterMsSql(
+            builder.RegisterPostgreSQL(
                 _connectionString,
                 connectionString => new MaintenanceEventContext(connectionString),
                 dbConnection => new MaintenanceEventContext(dbConnection)

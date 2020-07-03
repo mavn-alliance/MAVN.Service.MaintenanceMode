@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.MaintenanceMode.Domain;
 using MAVN.Service.MaintenanceMode.Domain.Repositories;
 using MAVN.Service.MaintenanceMode.MsSqlRepositories.Entitites;
@@ -10,9 +10,9 @@ namespace MAVN.Service.MaintenanceMode.MsSqlRepositories
 {
     public class MaintenanceEventRepository : IMaintenanceEventRepository
     {
-        private readonly MsSqlContextFactory<MaintenanceEventContext> _contextFactory;
+        private readonly PostgreSQLContextFactory<MaintenanceEventContext> _contextFactory;
 
-        public MaintenanceEventRepository(MsSqlContextFactory<MaintenanceEventContext> contextFactory)
+        public MaintenanceEventRepository(PostgreSQLContextFactory<MaintenanceEventContext> contextFactory)
         {
             _contextFactory = contextFactory;
         }
