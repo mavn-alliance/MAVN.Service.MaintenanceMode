@@ -1,10 +1,10 @@
-using System;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MAVN.Service.MaintenanceMode.MsSqlRepositories.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,7 @@ namespace MAVN.Service.MaintenanceMode.MsSqlRepositories.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     PlannedDuration = table.Column<TimeSpan>(nullable: false),
                     ActualStart = table.Column<DateTime>(nullable: false),
                     Who = table.Column<string>(nullable: false),
@@ -34,7 +34,7 @@ namespace MAVN.Service.MaintenanceMode.MsSqlRepositories.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     PlannedDuration = table.Column<TimeSpan>(nullable: false),
                     ActualStart = table.Column<DateTime>(nullable: false),
                     Who = table.Column<string>(nullable: false),
